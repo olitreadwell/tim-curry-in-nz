@@ -1,0 +1,39 @@
+name: Docker
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-healthcheck:
+    name: Build image and verify /health
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t template-app .
+      - name: Run container
+        run: docker run -d --rm -p 3521:80 --name template-app template-app
+      - name: Wait for the memorial page
+        run: |
+          for _ in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:3521/ >/dev/null 2>&1; then
+              echo "page ok"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "container never became healthy"
+          docker logs template-app
+          exit 1
+      - name: Stop container
+        if: ${{ always() }}
+        run: docker rm -f template-app || true
