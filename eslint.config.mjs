@@ -48,6 +48,8 @@ const eslintConfig = defineConfig([
 
   globalIgnores([
     '.next/**',
+    '.vercel/**',
+    'out/**',
     'node_modules/**',
     'coverage/**',
     'playwright-report/**',
