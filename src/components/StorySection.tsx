@@ -11,17 +11,17 @@ import { Reveal } from '@/components/Reveal';
  */
 export function StorySection(): ReactNode {
   return (
-    <section id="story" className="border-y border-gold/25 bg-ink-2">
+    <section id="story" className="border-y border-blood/25 bg-ink-2">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
-          <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
+          <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-blood">
             {storyCopy.eyebrow}
           </p>
           <h2 className="font-display text-5xl leading-[0.95] font-semibold tracking-tight md:text-6xl">
             {storyCopy.title}
           </h2>
           {storyCopy.intro.map((paragraph) => (
-            <p key={paragraph} className="mt-6 max-w-[62ch] leading-relaxed text-moss">
+            <p key={paragraph} className="mt-6 max-w-[62ch] leading-relaxed text-smoke">
               {paragraph}
             </p>
           ))}
@@ -29,32 +29,34 @@ export function StorySection(): ReactNode {
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {visits.map((visit) => (
             <Reveal key={visit.year} className="h-full">
-              <div className="h-full rounded-[2rem] bg-white/5 p-1.5 shadow-heaven-sm ring-1 ring-gold/15">
-                <article className="flex h-full flex-col rounded-[1.6rem] bg-ink p-7">
+              <div className="h-full rounded-lg bg-white/5 p-1.5 shadow-stage-sm ring-1 ring-blood/15">
+                <article className="flex h-full flex-col rounded-lg bg-ink p-7">
                   {visit.image ? (
                     <figure className="mb-6">
                       <img
                         src={visit.image.src}
                         alt={visit.image.alt}
                         loading="lazy"
-                        className="aspect-[4/3] w-full rounded-[1rem] object-cover"
+                        className="aspect-[4/3] w-full rounded-lg object-cover"
                       />
-                      <figcaption className="mt-2 flex items-center justify-between gap-2 text-[11px] text-moss">
+                      <figcaption className="mt-2 flex items-center justify-between gap-2 text-[11px] text-smoke">
                         <span>{visit.image.credit}</span>
                         <span>{visit.image.license}</span>
                       </figcaption>
                     </figure>
                   ) : null}
-                  <p className="font-display text-6xl font-semibold text-gold-soft">{visit.year}</p>
-                  <h3 className="mt-4 font-display text-2xl font-semibold text-cream">
+                  <p className="font-display text-6xl font-semibold text-blood-soft">
+                    {visit.year}
+                  </p>
+                  <h3 className="mt-4 font-display text-2xl font-semibold text-bone">
                     {visit.title}
                   </h3>
-                  <p className="mt-1 text-xs text-moss">
+                  <p className="mt-1 text-xs text-smoke">
                     {visit.date} · {visit.venue}
                   </p>
-                  <p className="mt-3 text-sm text-gold italic">{visit.line}</p>
+                  <p className="mt-3 text-sm text-blood">{visit.line}</p>
                   {visit.body.map((paragraph) => (
-                    <p key={paragraph} className="mt-4 text-sm leading-relaxed text-moss">
+                    <p key={paragraph} className="mt-4 text-sm leading-relaxed text-smoke">
                       {paragraph}
                     </p>
                   ))}
@@ -64,7 +66,7 @@ export function StorySection(): ReactNode {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`${visit.sourceLabel}, ${visit.year} visit`}
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-gold underline-offset-4 hover:underline focus-visible:underline"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-blood underline-offset-4 hover:underline focus-visible:underline"
                     >
                       {visit.sourceLabel}
                       <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />
@@ -76,7 +78,7 @@ export function StorySection(): ReactNode {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={source.label}
-                        className="block text-xs font-semibold text-gold underline-offset-4 hover:underline focus-visible:underline"
+                        className="block text-xs font-semibold text-blood underline-offset-4 hover:underline focus-visible:underline"
                       >
                         {source.label}
                       </a>

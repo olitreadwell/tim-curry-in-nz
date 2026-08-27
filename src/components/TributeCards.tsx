@@ -14,19 +14,17 @@ export function TributeCards(): ReactNode {
     <section id="tributes" className="mx-auto max-w-6xl px-6 py-24">
       <Reveal>
         <h2 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-          The world said <em className="text-gold-soft">goodbye</em>
+          The world said <em className="text-blood-soft not-italic">goodbye</em>
         </h2>
       </Reveal>
-      <div className="mt-12 grid grid-cols-1 gap-px bg-gold/20 md:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 gap-px bg-blood/20 md:grid-cols-3">
         {tributeCards.map((card) => (
           <Reveal key={card.headline} className="bg-ink">
-            <article className="flex h-full flex-col border border-gold/20 bg-ink-2 p-6">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-gold">{card.outlet}</p>
-              <h3 className="mt-3 text-lg leading-snug font-semibold text-cream">
-                {card.headline}
-              </h3>
+            <article className="flex h-full flex-col border border-blood/20 bg-ink-2 p-6">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-blood">{card.outlet}</p>
+              <h3 className="mt-3 text-lg leading-snug font-semibold text-bone">{card.headline}</h3>
               <blockquote className="mt-4 flex-1">
-                <p className="font-display text-xl leading-snug text-gold italic">
+                <p className="font-display text-xl leading-snug text-blood">
                   &ldquo;{card.quote}&rdquo;
                 </p>
               </blockquote>
@@ -35,7 +33,7 @@ export function TributeCards(): ReactNode {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`${card.headline}, ${card.outlet}`}
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-gold underline-offset-4 hover:underline focus-visible:underline"
+                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blood underline-offset-4 hover:underline focus-visible:underline"
               >
                 Read it
                 <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />

@@ -11,15 +11,15 @@ import { Reveal } from '@/components/Reveal';
  */
 export function BooksSection(): ReactNode {
   return (
-    <section id="books" className="border-y border-gold/25 bg-ink-2">
+    <section id="books" className="border-y border-blood/25 bg-ink-2">
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <Reveal>
-          <BookOpenIcon size={32} className="mx-auto text-gold" aria-hidden="true" />
+          <BookOpenIcon size={32} className="mx-auto text-blood" aria-hidden="true" />
           <h2 className="mt-6 font-display text-5xl font-semibold tracking-tight md:text-6xl">
             {booksCopy.title}
           </h2>
           {booksCopy.body.map((paragraph) => (
-            <p key={paragraph} className="mx-auto mt-5 max-w-[48ch] leading-relaxed text-moss">
+            <p key={paragraph} className="mx-auto mt-5 max-w-[48ch] leading-relaxed text-smoke">
               {paragraph}
             </p>
           ))}
@@ -27,10 +27,10 @@ export function BooksSection(): ReactNode {
             href={booksCopy.ctaHref}
             target="_blank"
             rel="noreferrer"
-            className="group mt-9 inline-flex items-center rounded-full bg-gold py-3 pr-3 pl-7 text-sm font-semibold tracking-wide text-ink shadow-heaven-sm transition-all duration-500 ease-heaven hover:-translate-y-0.5 hover:bg-gold-soft hover:shadow-heaven focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:translate-y-0 active:scale-[0.98]"
+            className="group mt-9 inline-flex items-center rounded-lg bg-blood py-3 pr-3 pl-7 text-sm font-semibold tracking-wide text-ink shadow-stage-sm transition-all duration-500 ease-stage hover:-translate-y-0.5 hover:bg-blood-soft hover:shadow-stage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood active:translate-y-0 active:scale-[0.98]"
           >
             {booksCopy.cta}
-            <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/25 transition-transform duration-500 ease-heaven group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/25 transition-transform duration-500 ease-stage group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRightIcon size={16} weight="bold" aria-hidden="true" />
             </span>
           </a>

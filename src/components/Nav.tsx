@@ -16,9 +16,9 @@ const navItems = [
 ] as const;
 
 /**
- * Floating glass pill navigation. Detached from the top edge with a soft
- * tinted shadow, the links sit in a desktop row or a glass dropdown on
- * narrow screens.
+ * Floating marquee-bar navigation. Detached below the hero's Now Showing
+ * strip with a red curtain edge, the links sit in a desktop row or a glass
+ * dropdown on narrow screens.
  *
  * @returns The page navigation bar
  */
@@ -26,18 +26,21 @@ export function Nav(): ReactNode {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav aria-label="Page sections" className="fixed inset-x-0 top-3 z-20 flex justify-center px-4">
+    <nav
+      aria-label="Page sections"
+      className="fixed inset-x-0 top-14 z-20 flex justify-center px-4"
+    >
       <div className="relative w-full max-w-5xl">
-        <div className="flex items-center justify-between rounded-full border border-white/10 bg-ink/80 py-2 pr-2 pl-5 shadow-heaven backdrop-blur-md">
-          <a href="#top" className="font-display text-lg font-semibold tracking-wide">
-            Tim Curry in <span className="italic text-gold">New Zealand</span>
+        <div className="flex items-center justify-between rounded-lg border border-white/10 border-t-2 border-t-blood/70 bg-ink/85 py-2 pr-2 pl-5 shadow-stage backdrop-blur-md">
+          <a href="#top" className="font-display text-base font-semibold tracking-wide md:text-lg">
+            Tim Curry in <span className="text-blood">New Zealand</span>
           </a>
           <ul className="hidden items-center gap-5 text-sm md:flex">
             {navItems.map((label) => (
               <li key={label}>
                 <a
                   href={`#${label.toLowerCase()}`}
-                  className="text-moss transition-colors duration-500 hover:text-gold focus-visible:text-gold"
+                  className="text-smoke transition-colors duration-500 hover:text-blood focus-visible:text-blood"
                 >
                   {label}
                 </a>
@@ -50,7 +53,7 @@ export function Nav(): ReactNode {
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-menu"
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex items-center justify-center rounded-full p-2 text-gold transition-colors duration-500 hover:text-gold-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:hidden"
+            className="inline-flex items-center justify-center rounded-lg p-2 text-blood transition-colors duration-500 hover:text-blood-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood md:hidden"
           >
             {menuOpen ? (
               <XIcon size={24} aria-hidden="true" />
@@ -62,7 +65,7 @@ export function Nav(): ReactNode {
         {menuOpen ? (
           <div
             id="mobile-nav-menu"
-            className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-white/10 bg-ink-2/95 shadow-heaven backdrop-blur-lg md:hidden"
+            className="absolute inset-x-0 top-full mt-3 rounded-lg border border-white/10 bg-ink-2/95 shadow-stage backdrop-blur-lg md:hidden"
           >
             <ul className="space-y-1 px-6 py-4">
               {navItems.map((label, index) => (
@@ -74,7 +77,7 @@ export function Nav(): ReactNode {
                   <a
                     href={`#${label.toLowerCase()}`}
                     onClick={() => setMenuOpen(false)}
-                    className="block py-2 text-sm text-moss transition-colors duration-500 hover:text-gold focus-visible:text-gold"
+                    className="block py-2 text-sm text-smoke transition-colors duration-500 hover:text-blood focus-visible:text-blood"
                   >
                     {label}
                   </a>

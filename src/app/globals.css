@@ -1,23 +1,22 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-ink: #14070c;
-  --color-ink-2: #1c0b11;
-  --color-ink-3: #241019;
-  --color-gold: #ff7a8a;
-  --color-gold-soft: #ffa3b0;
-  --color-cream: #ffe3e8;
-  --color-moss: #e0b3bd;
-  --color-plum: #ffd9df;
-  --color-blush: #ffb3c0;
+  --color-ink: #0d0408;
+  --color-ink-2: #16070d;
+  --color-ink-3: #200b13;
+  --color-blood: #ff7a8a;
+  --color-blood-soft: #ff9aa6;
+  --color-bone: #ffe9ec;
+  --color-smoke: #e3b7c0;
+  --color-ash: #c98f9c;
   --color-line: #4a2230;
 
-  --ease-heaven: cubic-bezier(0.32, 0.72, 0, 1);
-  --shadow-heaven-sm: 0 10px 24px -14px rgb(0 0 0 / 0.6), 0 4px 12px -8px rgb(255 45 85 / 0.12);
-  --shadow-heaven: 0 28px 70px -28px rgb(0 0 0 / 0.72), 0 12px 32px -14px rgb(255 45 85 / 0.16);
+  --ease-stage: cubic-bezier(0.32, 0.72, 0, 1);
+  --shadow-stage-sm: 0 10px 24px -14px rgb(0 0 0 / 0.7), 0 4px 12px -8px rgb(255 45 85 / 0.14);
+  --shadow-stage: 0 28px 70px -28px rgb(0 0 0 / 0.8), 0 12px 32px -14px rgb(255 45 85 / 0.18);
 
-  --font-display: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
+  --font-display: 'Cinzel', 'Georgia', serif;
+  --font-body: 'Spectral', 'Georgia', serif;
 }
 
 :root {
@@ -25,11 +24,11 @@
 }
 
 body {
-  @apply bg-ink text-cream font-body antialiased;
+  @apply bg-ink text-bone font-body antialiased;
   background-image:
-    radial-gradient(1100px 560px at 85% -10%, rgba(255, 45, 85, 0.16), transparent 60%),
-    radial-gradient(900px 520px at 8% 12%, rgba(140, 20, 45, 0.14), transparent 55%),
-    radial-gradient(800px 560px at 55% 115%, rgba(90, 10, 30, 0.24), transparent 60%);
+    radial-gradient(1100px 560px at 85% -10%, rgba(255, 45, 85, 0.18), transparent 60%),
+    radial-gradient(900px 520px at 8% 12%, rgba(120, 12, 38, 0.16), transparent 55%),
+    radial-gradient(800px 560px at 55% 115%, rgba(70, 6, 22, 0.3), transparent 60%);
   background-attachment: fixed;
 }
 
@@ -44,12 +43,12 @@ body::after {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blood);
   outline-offset: 2px;
 }
 
 ::selection {
-  background-color: var(--color-gold);
+  background-color: var(--color-blood);
   color: var(--color-ink);
 }
 
@@ -64,7 +63,7 @@ body::after {
   }
 }
 
-@keyframes wind-marquee {
+@keyframes marquee-scroll {
   from {
     transform: translateX(0);
   }
@@ -73,24 +72,22 @@ body::after {
   }
 }
 
-@keyframes cloud-drift {
+@keyframes smoke-drift {
   from {
-    transform: translateX(-24px);
+    transform: translateX(-18px) translateY(4px) scale(1);
   }
   to {
-    transform: translateX(24px);
+    transform: translateX(18px) translateY(-4px) scale(1.06);
   }
 }
 
-@keyframes twinkle {
+@keyframes bulb-flicker {
   0%,
   100% {
-    opacity: 0.35;
-    transform: scale(0.85);
+    opacity: 0.55;
   }
   50% {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -99,9 +96,9 @@ body::after {
   transform: translateY(26px);
   filter: blur(3px);
   transition:
-    opacity 0.9s var(--ease-heaven),
-    transform 0.9s var(--ease-heaven),
-    filter 0.9s var(--ease-heaven);
+    opacity 0.9s var(--ease-stage),
+    transform 0.9s var(--ease-stage),
+    filter 0.9s var(--ease-stage);
 }
 
 .reveal-visible {
@@ -111,24 +108,31 @@ body::after {
 }
 
 .animate-rise {
-  animation: rise-in 0.9s var(--ease-heaven) both;
+  animation: rise-in 0.9s var(--ease-stage) both;
 }
 
-.wind-marquee {
-  animation: wind-marquee 40s linear infinite;
+.marquee-scroll {
+  animation: marquee-scroll 40s linear infinite;
 }
 
-.wind-marquee:hover,
-.wind-marquee:focus-within {
+.marquee-scroll:hover,
+.marquee-scroll:focus-within {
   animation-play-state: paused;
 }
 
-.animate-drift {
-  animation: cloud-drift 14s ease-in-out infinite alternate;
+.animate-smoke {
+  animation: smoke-drift 16s ease-in-out infinite alternate;
 }
 
-.animate-twinkle {
-  animation: twinkle 3.2s ease-in-out infinite;
+.animate-flicker {
+  animation: bulb-flicker 3.2s ease-in-out infinite;
+}
+
+.marquee-bulbs {
+  background-image: radial-gradient(circle, var(--color-blood) 2.5px, transparent 3px);
+  background-size: 22px 10px;
+  background-repeat: repeat-x;
+  background-position: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -143,9 +147,9 @@ body::after {
     transition: none;
   }
   .animate-rise,
-  .wind-marquee,
-  .animate-drift,
-  .animate-twinkle {
+  .marquee-scroll,
+  .animate-smoke,
+  .animate-flicker {
     animation: none;
   }
 }

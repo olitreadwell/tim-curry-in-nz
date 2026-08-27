@@ -118,16 +118,16 @@ export function MusicPlayer(): ReactNode {
           aria-label="Listen to Tim Curry"
           aria-modal="true"
           hidden={!open}
-          className="w-[min(26rem,calc(100vw-2rem))] rounded-3xl border border-white/10 bg-ink-2/95 shadow-heaven backdrop-blur-md"
+          className="w-[min(26rem,calc(100vw-2rem))] rounded-lg border border-white/10 bg-ink-2/95 shadow-stage backdrop-blur-md"
         >
-          <div className="flex items-center justify-between border-b border-gold/25 px-5 py-3">
-            <p className="font-display text-lg font-semibold text-cream">The songs</p>
+          <div className="flex items-center justify-between border-b border-blood/25 px-5 py-3">
+            <p className="font-display text-lg font-semibold text-bone">The songs</p>
             <button
               ref={closeButtonRef}
               type="button"
               aria-label="Hide music player"
               onClick={closePanel}
-              className="p-1 text-gold transition-colors hover:text-gold-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+              className="p-1 text-blood transition-colors hover:text-blood-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
             >
               <XIcon size={20} aria-hidden="true" />
             </button>
@@ -159,17 +159,17 @@ export function MusicPlayer(): ReactNode {
           ) : null}
           {song !== null && !showList ? (
             <div className="px-5 pb-5">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-gold">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-blood">
                 Track {active! + 1} of {musicSongs.length}
               </p>
-              <p className="mt-1 font-display text-xl font-semibold text-cream">{song.title}</p>
-              <p className="mt-1 text-xs text-moss">Performed by {song.artist}.</p>
+              <p className="mt-1 font-display text-xl font-semibold text-bone">{song.title}</p>
+              <p className="mt-1 text-xs text-smoke">Performed by {song.artist}.</p>
               <div className="mt-3 flex items-center gap-2">
                 <button
                   type="button"
                   aria-label="Previous song"
                   onClick={previousSong}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10 text-gold transition-colors hover:bg-gold/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-blood/10 text-blood transition-colors hover:bg-blood/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
                 >
                   <SkipBackIcon size={18} weight="fill" aria-hidden="true" />
                 </button>
@@ -177,18 +177,20 @@ export function MusicPlayer(): ReactNode {
                   type="button"
                   aria-label="Next song"
                   onClick={nextSong}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10 text-gold transition-colors hover:bg-gold/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-blood/10 text-blood transition-colors hover:bg-blood/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
                 >
                   <SkipForwardIcon size={18} weight="fill" aria-hidden="true" />
                 </button>
-                <p className="ml-auto text-xs text-moss">Plays straight through, cover to cover.</p>
+                <p className="ml-auto text-xs text-smoke">
+                  Plays straight through, cover to cover.
+                </p>
               </div>
               <a
                 href={song.sourceUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Recording source for ${song.title}`}
-                className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-gold underline-offset-4 hover:underline focus-visible:underline"
+                className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-blood underline-offset-4 hover:underline focus-visible:underline"
               >
                 Recording on the Internet Archive
                 <ArrowUpRightIcon size={12} weight="bold" aria-hidden="true" />
@@ -197,14 +199,14 @@ export function MusicPlayer(): ReactNode {
                 <button
                   type="button"
                   onClick={() => setShowList(true)}
-                  className="text-sm text-moss underline-offset-4 hover:text-gold hover:underline"
+                  className="text-sm text-smoke underline-offset-4 hover:text-blood hover:underline"
                 >
                   All songs
                 </button>
                 <button
                   type="button"
                   onClick={stopMusic}
-                  className="text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                  className="text-sm font-semibold text-blood underline-offset-4 hover:underline"
                 >
                   Stop music
                 </button>
@@ -219,14 +221,14 @@ export function MusicPlayer(): ReactNode {
                     <button
                       type="button"
                       onClick={() => goTo(index)}
-                      className="block w-full border-b border-gold/10 py-3 text-left font-display text-lg text-cream transition-colors last:border-0 hover:text-gold focus-visible:text-gold focus-visible:outline-none"
+                      className="block w-full border-b border-blood/10 py-3 text-left font-display text-lg text-bone transition-colors last:border-0 hover:text-blood focus-visible:text-blood focus-visible:outline-none"
                     >
                       {item.title}
                     </button>
                   </li>
                 ))}
               </ul>
-              <p className="border-t border-gold/20 px-5 py-3 text-xs text-moss">
+              <p className="border-t border-blood/20 px-5 py-3 text-xs text-smoke">
                 Covers of the songs he made famous, from Rocky Horror to the stage. Nothing plays
                 until you press play, and the playlist keeps going track to track.
               </p>
@@ -238,20 +240,20 @@ export function MusicPlayer(): ReactNode {
         <div
           role="group"
           aria-label={`Now playing: ${song.title}`}
-          className="flex w-full max-w-sm items-center gap-3 rounded-full border border-white/10 bg-ink-2/95 py-2 pr-2 pl-4 shadow-heaven backdrop-blur-md"
+          className="flex w-full max-w-sm items-center gap-3 rounded-lg border border-white/10 bg-ink-2/95 py-2 pr-2 pl-4 shadow-stage backdrop-blur-md"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-ink">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blood text-ink">
             <MusicNotesIcon size={16} weight="fill" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold text-cream">{song.title}</p>
-            <p className="truncate text-[11px] text-moss">{song.artist}</p>
+            <p className="truncate text-sm font-semibold text-bone">{song.title}</p>
+            <p className="truncate text-[11px] text-smoke">{song.artist}</p>
           </div>
           <button
             type="button"
             aria-label={isPlaying ? 'Pause music' : 'Play music'}
             onClick={togglePlayback}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold transition-colors hover:bg-gold/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blood/15 text-blood transition-colors hover:bg-blood/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
           >
             {isPlaying ? (
               <PauseIcon size={16} weight="fill" aria-hidden="true" />
@@ -263,7 +265,7 @@ export function MusicPlayer(): ReactNode {
             type="button"
             aria-label="Open the music player"
             onClick={openPanel}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-gold transition-colors hover:text-gold-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-blood transition-colors hover:text-blood-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
           >
             <CaretUpIcon size={16} weight="bold" aria-hidden="true" />
           </button>
@@ -271,7 +273,7 @@ export function MusicPlayer(): ReactNode {
             type="button"
             aria-label="Hide the music player"
             onClick={() => setMinimized(false)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-gold transition-colors hover:text-gold-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-blood transition-colors hover:text-blood-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
           >
             <CaretDownIcon size={16} weight="bold" aria-hidden="true" />
           </button>
@@ -293,7 +295,7 @@ export function MusicPlayer(): ReactNode {
         className={
           showPill
             ? 'hidden'
-            : 'inline-flex items-center gap-2 bg-gold px-5 py-3 text-sm font-semibold tracking-wide text-ink shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:translate-y-0'
+            : 'inline-flex items-center gap-2 bg-blood px-5 py-3 text-sm font-semibold tracking-wide text-ink shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-blood-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood active:translate-y-0'
         }
       >
         <MusicNotesIcon size={18} weight="bold" aria-hidden="true" />

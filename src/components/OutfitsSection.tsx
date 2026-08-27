@@ -41,9 +41,9 @@ export function OutfitsSection(): ReactNode {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-4xl font-semibold tracking-tight md:text-5xl">
-              The <em className="text-gold-soft">look book</em>
+              The <em className="text-blood-soft not-italic">look book</em>
             </h2>
-            <p className="mt-4 max-w-[60ch] leading-relaxed text-moss">
+            <p className="mt-4 max-w-[60ch] leading-relaxed text-smoke">
               From a corset and heels to King Arthur&rsquo;s crown. Swipe or use the arrows.
             </p>
           </div>
@@ -52,7 +52,7 @@ export function OutfitsSection(): ReactNode {
               type="button"
               aria-label="Previous look"
               onClick={() => slideBy(-1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 text-gold transition-colors hover:bg-gold/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-blood/30 text-blood transition-colors hover:bg-blood/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood"
             >
               <ArrowLeftIcon size={18} weight="bold" aria-hidden="true" />
             </button>
@@ -60,7 +60,7 @@ export function OutfitsSection(): ReactNode {
               type="button"
               aria-label="Next look"
               onClick={() => slideBy(1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 text-gold transition-colors hover:bg-gold/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-blood/30 text-blood transition-colors hover:bg-blood/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood"
             >
               <ArrowRightIcon size={18} weight="bold" aria-hidden="true" />
             </button>
@@ -80,7 +80,7 @@ export function OutfitsSection(): ReactNode {
                 className="w-[82%] shrink-0 snap-start sm:w-[55%] lg:w-[31%]"
               >
                 <figure className="h-full">
-                  <div className="overflow-hidden border border-gold/25">
+                  <div className="overflow-hidden border border-blood/25">
                     <img
                       src={look.src}
                       alt={look.alt}
@@ -89,9 +89,9 @@ export function OutfitsSection(): ReactNode {
                     />
                   </div>
                   <figcaption className="mt-3">
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-gold">{look.era}</p>
-                    <p className="mt-1 text-sm font-semibold text-cream">{look.caption}</p>
-                    <p className="mt-1 text-xs text-moss">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-blood">{look.era}</p>
+                    <p className="mt-1 text-sm font-semibold text-bone">{look.caption}</p>
+                    <p className="mt-1 text-xs text-smoke">
                       {look.credit}, {look.license}
                       <span className="mx-1">·</span>
                       <a
@@ -99,7 +99,7 @@ export function OutfitsSection(): ReactNode {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`${look.alt} source`}
-                        className="underline underline-offset-2 hover:text-gold"
+                        className="underline underline-offset-2 hover:text-blood"
                       >
                         Source
                       </a>
@@ -116,7 +116,7 @@ export function OutfitsSection(): ReactNode {
                 type="button"
                 aria-label={`Go to look ${index + 1}: ${look.caption}`}
                 onClick={() => scrollToLook(index)}
-                className="h-2.5 w-2.5 rounded-full bg-gold/30 transition-colors hover:bg-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                className="h-2.5 w-2.5 rounded-full bg-blood/30 transition-colors hover:bg-blood focus-visible:outline focus-visible:outline-2 focus-visible:outline-blood"
               />
             ))}
           </div>
