@@ -372,49 +372,43 @@ export interface MusicSong {
 export const musicSongs: readonly MusicSong[] = [
   {
     title: 'Sweet Transvestite',
-    artist: 'Tim Curry',
-    audioUrl: 'https://archive.org/download/SweetTransvestite/TimCurry-SweetTransvestite.mp3',
-    sourceUrl: 'https://archive.org/details/SweetTransvestite',
+    artist: 'Glee cast (cover)',
+    audioUrl: 'https://archive.org/download/tvtunes_19122/Glee%20-%20Sweet%20Transvestite.mp3',
+    sourceUrl: 'https://archive.org/details/tvtunes_19122',
   },
   {
     title: 'The Time Warp',
-    artist: 'Tim Curry & the original cast',
-    audioUrl: 'https://archive.org/download/rocky-horror-picture-show-soundtrack/Time%20Warp.mp3',
-    sourceUrl: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
-    title: 'Science Fiction Double Feature',
-    artist: 'Tim Curry & the original cast',
-    audioUrl:
-      'https://archive.org/download/rocky-horror-picture-show-soundtrack/Science%20Fiction-Double%20Feature.mp3',
-    sourceUrl: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
-    title: 'Hot Patootie (Bless My Soul)',
-    artist: 'Meat Loaf & the original cast',
-    audioUrl:
-      'https://archive.org/download/rocky-horror-picture-show-soundtrack/Hot%20Patootie%20(Bless%20My%20Soul).mp3',
-    sourceUrl: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
-    title: 'I\u2019m Going Home',
-    artist: 'Tim Curry',
-    audioUrl:
-      'https://archive.org/download/rocky-horror-picture-show-soundtrack/I%27m%20Going%20Home.mp3',
-    sourceUrl: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
-    title: 'Touch-a, Touch-a, Touch-a, Touch Me',
-    artist: 'Susan Sarandon & the original cast',
-    audioUrl:
-      'https://archive.org/download/rocky-horror-picture-show-soundtrack/Touch-A-Touch-A-Touch-A-Touch%20Me.mp3',
-    sourceUrl: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
-    title: 'Time Warp',
     artist: 'Glee cast (cover)',
     audioUrl: 'https://archive.org/download/tvtunes_19123/Glee%20-%20Time%20Warp.mp3',
     sourceUrl: 'https://archive.org/details/tvtunes_19123',
+  },
+  {
+    title: 'Science Fiction Double Feature',
+    artist: 'Glee cast (cover)',
+    audioUrl:
+      'https://archive.org/download/tvtunes_22073/Glee%20-%20Science%20Fiction%20Double%20Feature.mp3',
+    sourceUrl: 'https://archive.org/details/tvtunes_22073',
+  },
+  {
+    title: 'Touch-a, Touch-a, Touch-a, Touch Me',
+    artist: 'Glee cast (cover)',
+    audioUrl:
+      'https://archive.org/download/tvtunes_22075/Glee%20-%20Touch%20A%20Touch%20A%20Touch%20A%20Touch%20Me.mp3',
+    sourceUrl: 'https://archive.org/details/tvtunes_22075',
+  },
+  {
+    title: 'Sweet Transvestite (Anthony Head)',
+    artist: 'Anthony Head (cover)',
+    audioUrl:
+      'https://archive.org/download/anthony-head-sweet-transvestite/Anthony%20Head%20-%20Sweet%20Transvestite%20%287inch%29.mp3',
+    sourceUrl: 'https://archive.org/details/anthony-head-sweet-transvestite',
+  },
+  {
+    title: 'Sweet Transvestite (Timm McCoy)',
+    artist: 'Timm McCoy (cover)',
+    audioUrl:
+      'https://archive.org/download/TimmMcCoySweetTransvestite/Timm%20McCoy%20-%20Sweet%20Transvestite.mp3',
+    sourceUrl: 'https://archive.org/details/TimmMcCoySweetTransvestite',
   },
   {
     title: 'Over at the Frankenstein Place',
@@ -1057,20 +1051,32 @@ export const sourceLinks = [
     url: 'https://www.thepaintedturtle.org/',
   },
   {
-    label: 'Internet Archive: Sweet Transvestite (original recording)',
-    url: 'https://archive.org/details/SweetTransvestite',
-  },
-  {
-    label: 'Internet Archive: The Rocky Horror Picture Show soundtrack',
-    url: 'https://archive.org/details/rocky-horror-picture-show-soundtrack',
-  },
-  {
     label: 'Internet Archive: Glee \u2014 Time Warp',
     url: 'https://archive.org/details/tvtunes_19123',
   },
   {
     label: 'Internet Archive: Glee \u2014 Over at the Frankenstein Place',
     url: 'https://archive.org/details/tvtunes_22074',
+  },
+  {
+    label: 'Internet Archive: Glee \u2014 Sweet Transvestite',
+    url: 'https://archive.org/details/tvtunes_19122',
+  },
+  {
+    label: 'Internet Archive: Glee \u2014 Science Fiction Double Feature',
+    url: 'https://archive.org/details/tvtunes_22073',
+  },
+  {
+    label: 'Internet Archive: Glee \u2014 Touch-a Touch-a Touch-a Touch Me',
+    url: 'https://archive.org/details/tvtunes_22075',
+  },
+  {
+    label: 'Internet Archive: Anthony Head \u2014 Sweet Transvestite',
+    url: 'https://archive.org/details/anthony-head-sweet-transvestite',
+  },
+  {
+    label: 'Internet Archive: Timm McCoy \u2014 Sweet Transvestite',
+    url: 'https://archive.org/details/TimmMcCoySweetTransvestite',
   },
   {
     label: 'Wikimedia Commons: Category Tim Curry',

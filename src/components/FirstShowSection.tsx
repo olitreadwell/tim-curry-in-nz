@@ -44,7 +44,7 @@ export function FirstShowSection(): ReactNode {
           </ul>
         </Reveal>
         <Reveal className="relative">
-          <div className="rounded-[2rem] bg-white/45 p-1.5 shadow-heaven ring-1 ring-gold/15">
+          <div className="rounded-[2rem] bg-white/5 p-1.5 shadow-heaven ring-1 ring-gold/15">
             <div className="bg-ink p-8">
               <p className="font-display text-7xl font-semibold text-gold-soft">
                 {firstShowCopy.cardYear}

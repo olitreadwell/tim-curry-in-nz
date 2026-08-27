@@ -23,7 +23,7 @@ export function LessonsSection(): ReactNode {
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {lessonItems.map((lesson) => (
             <Reveal key={lesson.title} className="h-full">
-              <div className="h-full rounded-[2rem] bg-white/45 p-1.5 shadow-heaven-sm ring-1 ring-gold/15">
+              <div className="h-full rounded-[2rem] bg-white/5 p-1.5 shadow-heaven-sm ring-1 ring-gold/15">
                 <article className="flex h-full flex-col rounded-[1.6rem] bg-ink p-7">
                   <h3 className="font-display text-2xl font-semibold text-cream">{lesson.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-moss">{lesson.body}</p>

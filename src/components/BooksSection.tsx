@@ -30,7 +30,7 @@ export function BooksSection(): ReactNode {
             className="group mt-9 inline-flex items-center rounded-full bg-gold py-3 pr-3 pl-7 text-sm font-semibold tracking-wide text-ink shadow-heaven-sm transition-all duration-500 ease-heaven hover:-translate-y-0.5 hover:bg-gold-soft hover:shadow-heaven focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:translate-y-0 active:scale-[0.98]"
           >
             {booksCopy.cta}
-            <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/25 transition-transform duration-500 ease-heaven group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/25 transition-transform duration-500 ease-heaven group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRightIcon size={16} weight="bold" aria-hidden="true" />
             </span>
           </a>

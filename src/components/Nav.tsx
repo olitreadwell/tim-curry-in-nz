@@ -28,7 +28,7 @@ export function Nav(): ReactNode {
   return (
     <nav aria-label="Page sections" className="fixed inset-x-0 top-3 z-20 flex justify-center px-4">
       <div className="relative w-full max-w-5xl">
-        <div className="flex items-center justify-between rounded-full border border-white/60 bg-ink/80 py-2 pr-2 pl-5 shadow-heaven backdrop-blur-md">
+        <div className="flex items-center justify-between rounded-full border border-white/10 bg-ink/80 py-2 pr-2 pl-5 shadow-heaven backdrop-blur-md">
           <a href="#top" className="font-display text-lg font-semibold tracking-wide">
             Tim Curry in <span className="italic text-gold">New Zealand</span>
           </a>
@@ -62,7 +62,7 @@ export function Nav(): ReactNode {
         {menuOpen ? (
           <div
             id="mobile-nav-menu"
-            className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-white/60 bg-white/90 shadow-heaven backdrop-blur-lg md:hidden"
+            className="absolute inset-x-0 top-full mt-3 rounded-3xl border border-white/10 bg-ink-2/95 shadow-heaven backdrop-blur-lg md:hidden"
           >
             <ul className="space-y-1 px-6 py-4">
               {navItems.map((label, index) => (

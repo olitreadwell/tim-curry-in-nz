@@ -20,10 +20,13 @@ describe('MusicPlayer', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Sweet Transvestite' }));
     const audio = screen.getByTitle('Sweet Transvestite');
     expect(audio.tagName).toBe('AUDIO');
-    expect(audio).toHaveAttribute('aria-label', 'Sweet Transvestite, performed by Tim Curry');
+    expect(audio).toHaveAttribute(
+      'aria-label',
+      'Sweet Transvestite, performed by Glee cast (cover)'
+    );
     expect(audio).not.toHaveAttribute('autoplay');
     expect(audio.querySelector('source')?.getAttribute('src')).toContain(
-      'TimCurry-SweetTransvestite.mp3'
+      'Glee%20-%20Sweet%20Transvestite.mp3'
     );
   });
 

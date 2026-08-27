@@ -29,7 +29,7 @@ export function StorySection(): ReactNode {
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {visits.map((visit) => (
             <Reveal key={visit.year} className="h-full">
-              <div className="h-full rounded-[2rem] bg-white/45 p-1.5 shadow-heaven-sm ring-1 ring-gold/15">
+              <div className="h-full rounded-[2rem] bg-white/5 p-1.5 shadow-heaven-sm ring-1 ring-gold/15">
                 <article className="flex h-full flex-col rounded-[1.6rem] bg-ink p-7">
                   {visit.image ? (
                     <figure className="mb-6">

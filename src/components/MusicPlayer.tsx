@@ -118,7 +118,7 @@ export function MusicPlayer(): ReactNode {
           aria-label="Listen to Tim Curry"
           aria-modal="true"
           hidden={!open}
-          className="w-[min(26rem,calc(100vw-2rem))] rounded-3xl border border-white/60 bg-ink-2/95 shadow-heaven backdrop-blur-md"
+          className="w-[min(26rem,calc(100vw-2rem))] rounded-3xl border border-white/10 bg-ink-2/95 shadow-heaven backdrop-blur-md"
         >
           <div className="flex items-center justify-between border-b border-gold/25 px-5 py-3">
             <p className="font-display text-lg font-semibold text-cream">The songs</p>
@@ -227,7 +227,7 @@ export function MusicPlayer(): ReactNode {
                 ))}
               </ul>
               <p className="border-t border-gold/20 px-5 py-3 text-xs text-moss">
-                The songs he made famous, from the original soundtrack to the covers. Nothing plays
+                Covers of the songs he made famous, from Rocky Horror to the stage. Nothing plays
                 until you press play, and the playlist keeps going track to track.
               </p>
             </>
@@ -238,7 +238,7 @@ export function MusicPlayer(): ReactNode {
         <div
           role="group"
           aria-label={`Now playing: ${song.title}`}
-          className="flex w-full max-w-sm items-center gap-3 rounded-full border border-white/60 bg-ink-2/95 py-2 pr-2 pl-4 shadow-heaven backdrop-blur-md"
+          className="flex w-full max-w-sm items-center gap-3 rounded-full border border-white/10 bg-ink-2/95 py-2 pr-2 pl-4 shadow-heaven backdrop-blur-md"
         >
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-ink">
             <MusicNotesIcon size={16} weight="fill" aria-hidden="true" />

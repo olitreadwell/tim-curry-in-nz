@@ -24,7 +24,7 @@ export function LinksSection(): ReactNode {
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {outsideLinks.map((link) => (
           <Reveal key={link.url} className="h-full">
-            <div className="h-full rounded-[2rem] bg-white/45 p-1.5 shadow-heaven-sm ring-1 ring-gold/15 transition-shadow duration-500 ease-heaven hover:shadow-heaven">
+            <div className="h-full rounded-[2rem] bg-white/5 p-1.5 shadow-heaven-sm ring-1 ring-gold/15 transition-shadow duration-500 ease-heaven hover:shadow-heaven">
               <a
                 href={link.url}
                 target="_blank"
@@ -40,7 +40,7 @@ export function LinksSection(): ReactNode {
                 </span>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold">
                   Visit
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/40 transition-transform duration-500 ease-heaven group-hover:translate-x-0.5">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/25 transition-transform duration-500 ease-heaven group-hover:translate-x-0.5">
                     <ArrowUpRightIcon size={13} weight="bold" aria-hidden="true" />
                   </span>
                 </span>

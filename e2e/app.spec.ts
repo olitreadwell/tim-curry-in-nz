@@ -35,7 +35,7 @@ test('music player opens without autoplay', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Listen to Tim Curry' }).click();
   await expect(page.getByRole('dialog', { name: 'Listen to Tim Curry' })).toBeVisible();
-  await page.getByRole('button', { name: 'Sweet Transvestite' }).click();
+  await page.getByRole('button', { name: 'Sweet Transvestite', exact: true }).click();
   await expect(page.getByTitle('Sweet Transvestite')).toBeVisible();
 });
 
